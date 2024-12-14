@@ -53,7 +53,7 @@ func naiveSyncContributionAggregation(contributions []*v2.SyncCommitteeContribut
 				j--
 			} else if c, err := b.AggregationBits.Contains(a.AggregationBits); err != nil {
 				return nil, err
-			} else if c {
+			} else {
 				// if a is fully contained in b, then a can be removed.
 				contributions = append(contributions[:i], contributions[i+1:]...)
 				break // Stop the inner loop, advance a.
